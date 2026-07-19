@@ -1,7 +1,8 @@
-# agentsmd
+# agents-md
+
 My AGENTS.md instructions
 
-# Rules to follow
+## Rules to follow
 
 Make the simplest possible actually practically functioning implementations of new features as a starter, not just demos. 
 
