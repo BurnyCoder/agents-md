@@ -50,7 +50,9 @@ Summarize what happens as you run the project, like data flow, etc. in README.md
 
 Add documentation in docs folder.
 
-Do not duplicate text in README.md, transport some text to docs or reports folders.
+Do not duplicate text in README.md, AGENTS.md, docs and reports folders.
+
+If README.md grows too big, transport some text to AGENTS.md, docs or reports folders. 
 
 Add a graph-based visualization of the architecture to README.md .
 
