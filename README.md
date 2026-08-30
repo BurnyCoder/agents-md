@@ -24,13 +24,15 @@ Anytime you're trying to solve something, search the internet if someone didn't 
 
 Make sure as many lines of code as possible are grounded in some library docs, guides on the internet, github repos, programming language docs, etc., and source link them in comments. Make sure to double-check the accuracy of your code while implementing code from these sources to minimize hallucinations.
 
+Don't make the lines of code grow too much. If you can edit or remove lines of code, instead of adding too many new lines of code, do that. 
+
 Consider if refactoring might be sometimes useful.
 
 Use .env for config.
 
 Use uv.
 
-Use uv unit to initialize new projects.
+Use uv init to initialize new projects.
 
 Use local venv in this folder.
 
@@ -45,6 +47,8 @@ Double check claims in README.md and AGENTS.md to make sure there are no halluci
 Make sure that how to install, setup and use everything is included in README.md. 
 
 Make sure that README.md includes all information to make it replicable for anyone cloning the repo. 
+
+Describe methodology and how to use the repo in first part of README.md.
 
 Summarize what happens as you run the project, like data flow, etc. in README.md so that user has an idea what's happening as he runs it.
 
@@ -66,9 +70,11 @@ When testing, run the whole pipeline like a user would. Make sure to inspect log
 
 But don't get stuck in some unnecessary testing for way too long.
 
-If you're stuck on some problem, search the internet for how others deal with it in papers, libraries, repos, discussions, etc. 
+If you're stuck on some problem, search the internet for how others deal with it in papers, libraries, repos, discussions, guides, etc. 
 
 Do code review with correctness, security, maintainability, tests, reliability, design and architecture review. Double-check for hallucinations. Do not loop in repeated code review for too long, just do one pass, unless there is some very serious issue.
+
+Test and push to github the core functionality first, make the simplest version satisfying the core specs work first, before entering a long loop of code reviews requesting security fixes etc. 
 
 Before writing anything, ask yourself:
 - does it need to exist
@@ -80,8 +86,14 @@ Make sure to NOT push credentials to GitHub.
 
 Make sure important files are pushed.
 
-Make sure to document results of all experiments with learnings into reports folder. Add to learnings what you tried and why, what issue you had and why, why something didn't work, how it was fixed, how did you find this solution, why did you pick this solution over others, what the result was and why, etc. Document why did you choose the hyperparameters and params in the finetuning. Describe methodology, model, data, training, eval, etc. and why that.
+Make sure you add sources to everything. 
+
+Overall, double-check claims to make sure there are no hallucinations. 
+
+Make sure to document results of all experiments with learnings into reports folder into .md files with a pdf paper. Make .md file for each experiment, and a .md file that includes all the experiments. Add to learnings what you tried and why, what issue you had and why, why something didn't work, how it was fixed, how did you find this solution, why did you pick this solution over others, what the result was and why, etc. Document why did you choose the hyperparameters and params in the finetuning. Describe methodology, model, data, training, eval, etc. and why that. Check outputs, logs, github history and Codex chat history as well. 
 
 Do a scientific method loop: define domain -> define question in the domain -> gather existing information, data, models related to it -> formulate a hypothesis based on it -> gather more empirical data by experiments to test the hypothesis -> analyze, interpret data, draw conclusions -> refine hypothesis according to that -> test with experiment -> refine with theory -> test -> refine ->...
 
 Make sure not to cause data leakage or other training issues. 
+
+Describe methodology (model, data, training, eval, etc.) and how to use the repo in first part of README.md.
