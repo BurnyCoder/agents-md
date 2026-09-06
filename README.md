@@ -20,7 +20,7 @@ Make sure all prompts and outputs from LLMs are written into logs without being 
 
 Add comments to each file, function and line of code with local explanation and global context sections. Actually explain how the line does it. Don't generate them using scripts, edit each line using file edit tool. Search the web for context.
 
-Anytime you're trying to solve something, search the internet if someone didn't already solve it yet I'm some library, guides, GitHub repos, forums, discussions, etc., and use that solution.
+Anytime you're trying to solve something, search the internet if someone didn't already solve it yet in some library, guides, GitHub repos, forums, discussions, HuggingFace, Kaggle, etc., and use that solution. If noone solved directly the same problem, find as close solution/s as possible and reuse them.
 
 Make sure as many lines of code as possible are grounded in some library docs, guides on the internet, github repos, programming language docs, etc., and source link them in comments. Make sure to double-check the accuracy of your code while implementing code from these sources to minimize hallucinations.
 
@@ -56,7 +56,7 @@ Add documentation in docs folder.
 
 Do not duplicate text in README.md, AGENTS.md, docs and reports folders.
 
-If README.md grows too big, transport some text to AGENTS.md, docs or reports folders. 
+If README.md grows too big, transport some text to AGENTS.md, docs or reports folders.
 
 Add a graph-based visualization of the architecture to README.md .
 
@@ -93,6 +93,12 @@ Make sure you add sources to everything.
 Overall, double-check claims to make sure there are no hallucinations. 
 
 Make sure to document results of all experiments with learnings into reports folder into .md files with a pdf paper. Make .md file for each experiment, and a .md file that includes all the experiments. Add to learnings what you tried and why, what issue you had and why, why something didn't work, how it was fixed, how did you find this solution, why did you pick this solution over others, what the result was and why, etc. Document why did you choose the hyperparameters and params in the finetuning. Describe methodology, model, data, training, eval, etc. and why that. Check outputs, logs, github history and Codex chat history as well. 
+
+Keep one .md file with summary of all experiments so far with explanations of all key terms, with a table of existing networks, their architectures, training algorithms, objectives, data, curriculums, accuracy, fill, completion, domain, etc. with explanations for layman.
+
+Use technical rigor. 
+
+Use scientific rigor. 
 
 Do a scientific method loop: define domain -> define question in the domain -> gather existing information, data, models related to it -> formulate a hypothesis based on it -> gather more empirical data by experiments to test the hypothesis -> analyze, interpret data, draw conclusions -> refine hypothesis according to that -> test with experiment -> refine with theory -> test -> refine ->...
 
