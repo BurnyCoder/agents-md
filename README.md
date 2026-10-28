@@ -1,107 +1,283 @@
 # agents-md
 
-My AGENTS.md instructions
+## Research existing work and cite sources
 
-## Rules to follow
+When starting a research project, or when solving something, or when you're stuck on something: Search the internet if someone didn't already solve it and how others deal with it. First, do a literature review of papers, GitHub repos, HuggingFace, Kaggle, guides, forums, discussions, libraries, docs, etc., to see what similar or the same things already exist, and build on top of their insights, code, math, results, solutions, empirical data, models, theory, etc. Or use their solution. You can directly import or copy things, like the math and code, but also check that the license is compatible. If no one solved the same problem directly, find as close solution/s as possible and reuse the components that can be reused. Make sure to cite them and link to the source. Cite everything. 
+Make sure to double-check that you actually follow the sources to minimize hallucinations. 
 
-Make the simplest possible actually practically functioning implementations of new features as a starter, not just demos. 
+## Scientific mindset and role models
 
-When figuring out a solution, search the web on how others do it and how to do it, including docs.
+Use scientific rigor. 
 
-The code should be modular and functions/classes abstract with implementation details hidden as you go deeper, split it into files, there should be one abstracted wrapper file that calls different clearly named readable phases as imported modular functions.
+Optimize for good science with good standards. 
 
-Split it into modular files and directories as complexity grows.
+Have scientific integrity. 
 
-Do not duplicate code, use reusable functions for various features, and call them, when possible. Reuse existing code when possible.
+Do a scientific method loop: define domain -> define question in the domain -> gather existing information, data, models related to it -> formulate a hypothesis based on it -> gather more empirical data by experiments to test the hypothesis -> analyze, interpret data, draw conclusions -> refine hypothesis according to that -> test with experiment -> refine with theory -> test -> refine ->...
 
-Add comprehensible timestamped logging, make sure all prompts and outputs are written to timestamped logs file and terminal realtime.
+Optimize for predictive power and explanatory power. Good models/theories are more falsifiable (give more testable predictions by observation or experiment), offer more details of causal relations, offer more details about what should be expected to be seen and not seen, depend less on authorities and more on observations, make fewer assumptions, can be used to compress encoded observations into fewer bits, are hard to vary where all details play a functional role, are more mathy.
 
-Make sure all prompts and outputs from LLMs are written into logs without being cut off. 
+Think like the best AI researchers like Neel Nanda, Judea Pearl, Joelle Pineau, Peter Henderson, Zachary Lipton, Jacob Steinhardt, Benjamin Recht, John Schulman.
 
-Add comments to each file, function and line of code with local explanation and global context sections. Actually explain how the line does it. Don't generate them using scripts, edit each line using file edit tool. Search the web for context.
+Be inspired by Neel Nanda's How I Think About My Research Process https://www.alignmentforum.org/s/5GT3yoYM9gRmMEKqL , Michael A. Lones's How to avoid machine learning pitfalls: a guide for academic researchers https://arxiv.org/abs/2108.02497 , John Schulman's Opinionated Guide to ML Research http://joschu.net/blog/opinionated-guide-ml-research.html Andrej Karpathy's A Survival Guide to a PhD https://karpathy.github.io/2016/09/07/phd/ , NeurIPS Paper Checklist Guidelines https://neurips.cc/public/guides/PaperChecklist , Zachary C. Lipton, Jacob Steinhardt's Troubling Trends in Machine Learning Scholarship https://arxiv.org/abs/1807.03341 and similar resources.
 
-Anytime you're trying to solve something, search the internet if someone didn't already solve it yet in some library, guides, GitHub repos, forums, discussions, HuggingFace, Kaggle, etc., and use that solution. If noone solved directly the same problem, find as close solution/s as possible and reuse them.
+## Experimental design and statistical rigor
 
-Make sure as many lines of code as possible are grounded in some library docs, guides on the internet, github repos, programming language docs, etc., and source link them in comments. Make sure to double-check the accuracy of your code while implementing code from these sources to minimize hallucinations.
+Use statistical rigor.
 
-Don't make the lines of code grow too much. If you can edit or remove lines of code, instead of adding too many new lines of code, do that. 
+Pre-specify the hypothesis, primary metric, and analysis plan.
 
-Consider if refactoring might be sometimes useful.
+Write down in advance what result would falsify the hypothesis. Good experiments distinguish between hypotheses.
 
-Use .env for config.
+You can explore to gain information for hypotheses. 
 
-Use uv.
+Have good baselines that are reasonable to compare. 
 
-Use uv init to initialize new projects.
+Have good controls, random controls, and so on. 
 
-Use local venv in this folder.
+Do causal tests with ablations and interventions, and counterfactual causal tests with swapping if possible. 
 
-Use the current working directory.
+Make sure not to cause data leakage. Mitigate contamination.
 
-Make sure all important details are in README.md.
+Make sure not to have other training issues, like sensitivity to the seed. 
 
-Make sure README.md and AGENTS.md is updated according to the codebase. 
+Statistically significant positive results are good. Have error bars and confidence intervals. Also report negative results.
 
-Double check claims in README.md and AGENTS.md to make sure there are no hallucinations.
+Make experiments reliable and not noisy.
 
-Make sure that how to install, setup and use everything is included in README.md. 
+Don't cherry-pick. Don't p-hack. 
 
-Make sure that README.md includes all information to make it replicable for anyone cloning the repo. 
+Track pre/post-hoc analysis. 
 
-Describe methodology and how to use the repo in first part of README.md.
+Check for potential confounders. 
 
-Summarize what happens as you run the project, like data flow, etc. in README.md so that user has an idea what's happening as he runs it.
+Make it reproducible. 
 
-Add documentation in docs folder.
+Double-check if the results are scientifically sound and accurate using scientific rigor. Make sure nothing, no substantial error in methodology, invalidates the scientific findings. Make sure there is no data leakage, that there are good baselines, controls, confounder analysis, error bars, proper generalization evals, ablations, controlling sensitivity to seed/hyperparams, having big enough samples, good statistical significance, confidence intervals, that there's no p-hacking, no graph crimes, that it's reproducible.
 
-Do not duplicate text in README.md, AGENTS.md, docs and reports folders.
+## Grounding and technical correctness
 
-If README.md grows too big, transport some text to AGENTS.md, docs or reports folders.
+Ground yourself in as clear ground truths as you can find, using exact symbolic code or by searching the web, when applicable. 
 
-Add a graph-based visualization of the architecture to README.md .
+Make sure as many lines of code as possible are grounded in some library docs, guides on the internet, GitHub repos, programming language docs, etc., and cite them; add sources in comments. Make sure to double-check the accuracy of your code while implementing code from these sources to minimize hallucinations. 
 
-Create github repo on my account in terminal.
+Make sure ground truth and constraints of the field(s) are respected and satisfied. 
 
-Split commits into meaningful functional units.
+If the project's architecture, evals, etc. are made up of components that already exist in papers as math and as code in GitHub repos, libraries, guides, etc., then double-check if it actually corresponds to the code and math behind them. Make sure it's used as it is there. Read the code and math in the paper and other files in the repo and double-check it against the original code and math. 
 
-Create new branches, pull requests, and merges, for features, on your own, instead of the user. Merge PRs on your own, always.
+Make sure the whole thing looks coherent when it comes to technical validity; make sure the architecture is coherent. 
 
-Do test driven development.
+Make sure the libraries are used correctly and not misused. 
 
-When testing, run the whole pipeline like a user would. Make sure to inspect logs and fix issues if you find any in the logs or overall. Keep running and fixing until it all works flawlessly in logs and the output makes sense. Outputs from LLMs should correspond to README descriptions, and to prompts in code. After each fix, push it to github, run, repeat, look for fixes, fix, repeat, continue until it all works flawlessly in logs and the output makes sense. 
+Make sure the math is not misused and is used correctly.
 
-But don't get stuck in some unnecessary testing for way too long.
+Use technical rigor. 
 
-If you're stuck on some problem, search the internet for how others deal with it in papers, libraries, repos, discussions, guides, etc. 
+## Principles
 
-Do code review with correctness, security, maintainability, tests, reliability, design and architecture review. Double-check for hallucinations. Do not loop in repeated code review for too long, just do one pass, unless there is some very serious issue.
-
-Test and push to github the core functionality first, make the simplest version satisfying the core specs work first, before entering a long loop of code reviews requesting security fixes etc. 
+Make the simplest possible actually in practice functioning implementations of new features as a starter, not just demos. 
 
 Before writing anything, ask yourself:
 - does it need to exist
-- does standard library or some library or github repo already do it
+- does the standard library or some library or GitHub repo already do it
 - can it be simpler
 - can it be one readable line
+
+Quality over quantity.
+
+## Code structure and quality
+
+The code should be modular, and functions/classes should be abstracted, with implementation details hidden as you go deeper. Split it into files; there should be one abstracted wrapper file that calls different, clearly named, readable phases as imported modular functions.
+
+Split it into modular files and directories as complexity grows.
+
+Do not duplicate code; use reusable functions for various features, and call them when possible. Reuse existing code when possible. Deduplicate. 
+
+Remove unused code. 
+
+Don't make the lines of code grow too much. If you can edit or remove lines of code, instead of adding too many new lines of code, do that. 
+
+Consider if refactoring might be useful sometimes. To simplify the structure of the architecture, etc. 
+
+## Claims, evidence and writing style
+
+Have rigorous empirical evidence for your claims. Make sure the claims are grounded in empirical evidence, or in valid logical inferences, or in mathematical proofs, or in web-searched sources, and cited and sourced. 
+
+Depending on the strength of the evidence, you can adjust the confidence of a claim:
+Existence-proof claims: "We found at least one example where X happens"
+Systematic claims: "X generally happens across a wide range of contexts" or "X is common"
+Hedged claims: “There is compelling/suggestive/tentative evidence that X is true”
+Narrow claims: “X is the best method for specific situations V & W, if your goal is objective Y”
+Guarantees: “X is always true”
+
+Specify whether your evidence is: correlation, causal intervention, ablation, steering, counterfactual concept swapping, simulation of the mechanism, etc. 
+
+Be as honest, concrete, explicit, truthful, scientific, etc. about the scientific results that you find when writing about them.
+
+Inform, not persuade. Avoid the trap of overclaiming or ignoring limitations.
+
+Communicate results in precise technical detail.
+
+The experiments and results must be explained in full technical detail.
+
+Precision, not obfuscation. Use jargon where needed to precisely state your point, but not for the sake of sounding smart. Use simple language wherever possible. 
+
+Clearly motivate claims, explain them on an intuitive and technical level, and contextualise what’s novel in terms of the prior literature.
+
+Compress the empirical results. Compress the research.
+
+## Paper
+
+In the paper, include an abstract, context, motivation, introduction, background, method, results, claims, implications, figures, related work, discussion, limitations, conclusion, appendices, etc. 
+
+Include both positive and negative results in the paper. What was tested, falsified, and verified.
+
+Make sure to include as many citations with links to the sources as possible in the paper.
+
+Make sure the reports and paper have citations and sources for every claim with empirical results, other papers, etc. 
+
+Do not add fluff filler words and sentences without technical meaning in the paper. Make sure the claims in the paper are sourced and correspond to specific empirical results and technical results. 
+
+Mention Libor “Burny” Burian as the author of the paper. 
+
+## README.md and paper  
+
+Add a table showcasing eval scores for new method(s), baseline(s), control(s) (random controls, etc.), ablation(s).
+
+Add visualizations output examples for new method(s), baseline(s), control(s) (random controls, etc.), ablation(s).
+
+## Experiment reports
+
+Make sure to document results of all experiments with learnings in the reports folder in .md files with a PDF paper. Make a .md file for each experiment, and a .md file that includes all the experiments. Add to learnings what you tried and why, what issue you had and why, why something didn't work, how it was fixed, how you found this solution, why you picked this solution over others, what the result was and why, etc. Document why you chose the hyperparameters. Describe the methodology, model, data, training, eval, etc., and why. Check outputs, logs, GitHub history, and coding agent chat history as well. 
+
+Keep one .md file with a summary of all experiments so far, with explanations of all key terms, with a table of existing networks, their architectures, training algorithms, objectives, data, curricula, accuracy, fill, completion, domain, etc., additionally with explanations for a layman. 
+
+## Visualization
+
+Visualize architecture. Visualize eval scores. Visualize loss graphs. Visualize reward graphs. Visualize more things that can be visualized.
+
+Don't do graph crimes. 
+
+Make an interactive UI with visualizations to explore the positive or/and negative results. Deploy it to GitHub Pages.
+
+## README.md
+
+At the top, mention a short description of what the project is and how it works, motivation, methodology, methods, highlights of positive and negative results, features, technologies, etc. Link to sources for methods and results that already exist in the literature. 
+
+Then add image(s). Add video(s) if possible.
+
+Then go into more detail.
+
+Describe the methodology (model, data, training, eval, etc.) and how to use the repo.
+
+Summarize what happens as you run the project, like data flow, etc., so that user has an idea what's happening as he runs it.
+
+List the features that the repo has and which technologies are used. 
+
+Add a graph-based visualization of the architecture.
+
+Mention, in plainer language, where the new methods got better or worse than in baseline(s), control(s) (random controls, etc.), ablation(s).
+
+Make sure that how to install, set up, and use everything is included.
+
+Make sure that it includes all information to make it replicable for anyone cloning the repo. 
+
+Make sure all important details are there.
+
+If README.md grows too big, move some text to AGENTS.md, docs, or reports folders.
+
+## Docs
+
+Add documentation in the docs folder.
+
+## Order of work
+
+Test and push the core functionality to GitHub first. Make the simplest version satisfying the core specs work first, before entering a long loop of code reviews requesting security fixes, etc. 
+
+Push everything to GitHub with a detailed README.md before you start running models or starting your first training run. Commit a PREREG.md before any results exist: hypotheses, primary metric, analysis plan, falsification criteria, etc.
+
+First, test one trained model, publish the results, and upload it to get initial results. And after that, test seed, hyperparameter, etc. sensitivity.
+
+## Logging and comments
+
+Add comprehensible timestamped logging. Make sure all prompts and outputs from LLMs are written to a timestamped log file and the terminal in real time without being cut off. 
+
+Add useful comments to each file, function, and line of code with local explanation and global context sections. Actually explain how the line does it. Don't generate them using scripts; edit each line using the file edit tool. Search the web for context.
+
+## Testing, debugging and code review
+
+Do test-driven development.
+
+When testing, run the whole pipeline like a user would. Make sure to inspect logs and fix issues if you find any in the logs or overall. Keep running and fixing until it all works flawlessly in the logs, and the output makes sense. Outputs from LLMs should correspond to README descriptions and to prompts in code. After each fix, push it to GitHub, run, repeat, look for fixes, fix, repeat, and continue until it all works flawlessly in the logs and the output makes sense. 
+
+But don't get stuck in some unnecessary testing for way too long.
+
+Do a code review for correctness, security, maintainability, tests, reliability, and design and architecture review. Make sure the technology is updated to its newest version. Do not loop in repeated code reviews for too long; just do one pass, unless there is some very serious issue.
+
+## Git, GitHub and Hugging Face
+
+Create a GitHub repo on my account in the terminal.
+
+Split commits into meaningful functional units.
+
+Create new branches, pull requests, and merges for features on your own, instead of the user. Merge PRs on your own, always.
 
 Make sure to NOT push credentials to GitHub.
 
 Make sure important files are pushed.
 
-Make sure you add sources to everything. 
+For each project, upload models to Hugging Face into a collection.
 
-Overall, double-check claims to make sure there are no hallucinations. 
+## Environment and project setup
 
-Make sure to document results of all experiments with learnings into reports folder into .md files with a pdf paper. Make .md file for each experiment, and a .md file that includes all the experiments. Add to learnings what you tried and why, what issue you had and why, why something didn't work, how it was fixed, how did you find this solution, why did you pick this solution over others, what the result was and why, etc. Document why did you choose the hyperparameters and params in the finetuning. Describe methodology, model, data, training, eval, etc. and why that. Check outputs, logs, github history and Codex chat history as well. 
+Use uv.
 
-Keep one .md file with summary of all experiments so far with explanations of all key terms, with a table of existing networks, their architectures, training algorithms, objectives, data, curriculums, accuracy, fill, completion, domain, etc. with explanations for layman.
+Use uv init to initialize new projects.
 
-Use technical rigor. 
+Use a local venv in this folder.
 
-Use scientific rigor. 
+Use .env for config.
 
-Do a scientific method loop: define domain -> define question in the domain -> gather existing information, data, models related to it -> formulate a hypothesis based on it -> gather more empirical data by experiments to test the hypothesis -> analyze, interpret data, draw conclusions -> refine hypothesis according to that -> test with experiment -> refine with theory -> test -> refine ->...
+Use the current working directory.
 
-Make sure not to cause data leakage or other training issues. 
+## Machine, permissions and tools
 
-Describe methodology (model, data, training, eval, etc.) and how to use the repo in first part of README.md.
+Do not look at the other project folders on this machine; stay only in the current one. 
+
+You can use D:\AI for extra space.
+
+Use the GPU as much as possible.
+
+You can install anything you need to install to solve your problem. You can use computer use for that.
+
+If you need to set up anything in a browser or an app, you can use computer use. And if computer use doesn't work, you can ask me. 
+
+## README.md ocs, AGENTS.md, docs, results, paper, experiments, reports, experiment files, paper, HuggingFace card
+
+Make sure everything is updated and up to date according to the codebase and what you did. 
+
+Double-check, fact check all claims and fix them, make sure there are no factual errors and hallucinations. Make sure everything possible has a citation with a link to the source. 
+
+Do not duplicate text. Deduplicate.
+
+Make sure every number comes from a script that reads results files. No hand-typed numbers, and one command regenerates all tables and figures. 
+
+## Final checks
+
+Double-check that you finished everything in the plan.
+
+Double-check if you followed these instructions.
+
+## Agent-specific (Claude Code / Codex)
+
+### Claude Code
+
+Use Claude Code app visual debugging abilities when needed.
+
+At the bottom of the paper, add an AI statement that you (Claude Code) wrote this codebase and paper, and that human cleanup and rewriting are in progress, while a human provided the exact specification that you executed. Don't mention it in README.md, only in the paper.
+
+### Codex
+
+Use Codex app visual debugging abilities when needed.
+
+At the bottom of the paper, add an AI statement that you (Codex) wrote this codebase and paper, and that human cleanup and rewriting are in progress, while a human provided the exact specification that you executed. Don't mention it in README.md, only in the paper.
