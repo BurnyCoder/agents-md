@@ -246,6 +246,8 @@ Do not look at the other project folders on this machine; stay only in the curre
 
 You can use D:\AI for extra space.
 
+You can make a folder in WSL's ~/projects and use it.
+
 Use the GPU as much as possible.
 
 You can install anything you need to install to solve your problem. You can use computer use for that.
