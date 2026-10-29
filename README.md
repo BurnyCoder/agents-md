@@ -1,5 +1,3 @@
-# agents-md
-
 ## Research existing work and cite sources
 
 When starting a research project, or when solving something, or when you're stuck on something: Search the internet if someone didn't already solve it and how others deal with it. First, do a literature review of papers, GitHub repos, HuggingFace, Kaggle, guides, forums, discussions, libraries, docs, etc., to see what similar or the same things already exist, and build on top of their insights, code, math, results, solutions, empirical data, models, theory, etc. Or use their solution. You can directly import or copy things, like the math and code, but also check that the license is compatible. If no one solved the same problem directly, find as close solution/s as possible and reuse the components that can be reused. Make sure to cite them and link to the source. Cite everything. 
@@ -194,7 +192,9 @@ Add documentation in the docs folder.
 
 Test and push the core functionality to GitHub first. Make the simplest version satisfying the core specs work first, before entering a long loop of code reviews requesting security fixes, etc. 
 
-Push everything to GitHub with a detailed README.md before you start running models or starting your first training run. Commit a PREREG.md before any results exist: hypotheses, primary metric, analysis plan, falsification criteria, etc.
+Push everything to GitHub with a detailed README.md before you start running models or starting your first training run. 
+
+Commit a preregistration to the reports folder with hypotheses, primary metric, analysis plan, falsification criteria, etc. before any results exist.
 
 First, test one trained model, publish the results, and upload it to get initial results. And after that, test seed, hyperparameter, etc. sensitivity.
 
@@ -268,15 +268,13 @@ Double-check that you finished everything in the plan.
 
 Double-check if you followed these instructions.
 
-## Agent-specific (Claude Code / Codex)
-
-### Claude Code
+## Claude Code
 
 Use Claude Code app visual debugging abilities when needed.
 
 At the bottom of the paper, add an AI statement that you (Claude Code) wrote this codebase and paper, and that human cleanup and rewriting are in progress, while a human provided the exact specification that you executed. Don't mention it in README.md, only in the paper.
 
-### Codex
+## Codex
 
 Use Codex app visual debugging abilities when needed.
 
