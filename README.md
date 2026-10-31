@@ -17,7 +17,7 @@ Optimize for predictive power and explanatory power. Good models/theories are mo
 
 Think like the best AI researchers like Neel Nanda, Judea Pearl, Joelle Pineau, Peter Henderson, Zachary Lipton, Jacob Steinhardt, Benjamin Recht, John Schulman.
 
-Be inspired by Neel Nanda's How I Think About My Research Process https://www.alignmentforum.org/s/5GT3yoYM9gRmMEKqL , Michael A. Lones's How to avoid machine learning pitfalls: a guide for academic researchers https://arxiv.org/abs/2108.02497 , John Schulman's Opinionated Guide to ML Research http://joschu.net/blog/opinionated-guide-ml-research.html Andrej Karpathy's A Survival Guide to a PhD https://karpathy.github.io/2016/09/07/phd/ , NeurIPS Paper Checklist Guidelines https://neurips.cc/public/guides/PaperChecklist , Zachary C. Lipton, Jacob Steinhardt's Troubling Trends in Machine Learning Scholarship https://arxiv.org/abs/1807.03341 and similar resources.
+Be inspired by Neel Nanda's How I Think About My Research Process https://www.alignmentforum.org/s/5GT3yoYM9gRmMEKqL https://www.lesswrong.com/s/5GT3yoYM9gRmMEKqL https://www.lesswrong.com/posts/hjMy4ZxS5ogA9cTYK/how-i-think-about-my-research-process-explore-understand https://www.lesswrong.com/posts/cbBwwm4jW6AZctymL/my-research-process-key-mindsets-truth-seeking https://www.lesswrong.com/posts/Ldrss6o3tiKT6NdMm/my-research-process-understanding-and-cultivating-research https://www.lesswrong.com/posts/eJGptPbbFPZGLpjsp/highly-opinionated-advice-on-how-to-write-ml-papers, Michael A. Lones's How to avoid machine learning pitfalls: a guide for academic researchers https://arxiv.org/abs/2108.02497 , John Schulman's Opinionated Guide to ML Research http://joschu.net/blog/opinionated-guide-ml-research.html Andrej Karpathy's A Survival Guide to a PhD https://karpathy.github.io/2016/09/07/phd/ , NeurIPS Paper Checklist Guidelines https://neurips.cc/public/guides/PaperChecklist , Zachary C. Lipton, Jacob Steinhardt's Troubling Trends in Machine Learning Scholarship https://arxiv.org/abs/1807.03341 and similar resources.
 
 ## Experimental design and statistical rigor
 
@@ -160,7 +160,7 @@ Make an interactive UI with visualizations to explore the positive or/and negati
 
 ## README.md
 
-At the top, mention a short description of what the project is and how it works, motivation, methodology, methods, highlights of positive and negative results, features, technologies, etc. Link to sources for methods and results that already exist in the literature. 
+At the top, mention a short description of what the project is and how it works, motivation, methodology, methods, highlights of the most significant positive and negative results, features, technologies, etc. Link to sources for methods and results that already exist in the literature. 
 
 Then add image(s). Add video(s) if possible.
 
@@ -190,13 +190,27 @@ Add documentation in the docs folder.
 
 ## Order of work
 
-Test and push the core functionality to GitHub first. Make the simplest version satisfying the core specs work first, before entering a long loop of code reviews requesting security fixes, etc. 
+First, write down a preregistration in the reports folder with hypotheses, primary metric, analysis plan, falsification criteria, etc., and push it to GitHub before any results exist, with a detailed README.md. 
 
-Push everything to GitHub with a detailed README.md before you start running models or starting your first training run. 
+After that, implement, push, and test the core functionality to GitHub with an updated detailed README.md. Do this before you start running any models or starting your first training run. Make the simplest version satisfying the core specs work first, before entering a long loop of code reviews requesting security fixes, etc. 
 
-Commit a preregistration to the reports folder with hypotheses, primary metric, analysis plan, falsification criteria, etc. before any results exist.
+After that, train and evaluate one model wíth controls and baselines that don't need to be trained if they're available, then push it all to GitHub and Hugging Face with the paper, results, reports, an updated detailed README.md, website, etc. 
 
-First, test one trained model, publish the results, and upload it to get initial results. And after that, test seed, hyperparameter, etc. sensitivity.
+After that, if needed, train and evaluate control model(s), then push it all to GitHub and Hugging Face with the updated detailed paper, results, reports, detailed README.md, website, etc. 
+
+After that, if needed, train and evaluate baseline model(s), then push it all to GitHub and Hugging Face with the updated detailed paper, results, reports, detailed README.md, website, etc. 
+
+After that, if needed, train and evaluate ablation model(s) and push it all to GitHub and Hugging Face with the updated detailed paper, results, reports, detailed README.md, website, etc. 
+
+After that, if needed, train and evaluate more models, then push it all to GitHub and Hugging Face with the updated detailed paper, results, reports, detailed README.md, website, etc. 
+
+After that, if needed, train and evaluate more control models, then push it all to GitHub and Hugging Face with the updated detailed paper, results, reports, detailed README.md, website, etc. 
+
+After that, if needed, train and evaluate more baseline models, then push it all to GitHub and Hugging Face with the updated detailed paper, results, reports, detailed README.md, website, etc.
+
+After that, if needed, train and evaluate more ablation models and push it all to GitHub and Hugging Face with the updated detailed paper, results, reports, detailed README.md, website, etc. 
+
+After that, if needed, train models for seed, hyperparameter, etc. sweeps for testing sensitivity, and push it all to GitHub and Hugging Face with the updated detailed paper, results, reports, detailed README.md, website, etc. 
 
 ## Logging and comments
 
@@ -226,7 +240,7 @@ Make sure to NOT push credentials to GitHub.
 
 Make sure important files are pushed.
 
-For each project, upload models to Hugging Face into a collection.
+For each project, upload models to Hugging Face into a collection. Use one Hugging Face collection for this research.
 
 ## Environment and project setup
 
@@ -275,9 +289,3 @@ Double-check if you followed these instructions.
 Use Claude Code app visual debugging abilities when needed.
 
 At the bottom of the paper, add an AI statement that you (Claude Code) wrote this codebase and paper, and that human cleanup and rewriting are in progress, while a human provided the exact specification that you executed. Don't mention it in README.md, only in the paper.
-
-## Codex
-
-Use Codex app visual debugging abilities when needed.
-
-At the bottom of the paper, add an AI statement that you (Codex) wrote this codebase and paper, and that human cleanup and rewriting are in progress, while a human provided the exact specification that you executed. Don't mention it in README.md, only in the paper.
