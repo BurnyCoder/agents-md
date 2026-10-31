@@ -289,3 +289,9 @@ Double-check if you followed these instructions.
 Use Claude Code app visual debugging abilities when needed.
 
 At the bottom of the paper, add an AI statement that you (Claude Code) wrote this codebase and paper, and that human cleanup and rewriting are in progress, while a human provided the exact specification that you executed. Don't mention it in README.md, only in the paper.
+
+## Codex
+
+Use Codex app visual debugging abilities when needed.
+
+At the bottom of the paper, add an AI statement that you (Codex) wrote this codebase and paper, and that human cleanup and rewriting are in progress, while a human provided the exact specification that you executed. Don't mention it in README.md, only in the paper.
